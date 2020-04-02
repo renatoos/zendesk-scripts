@@ -56,8 +56,8 @@ require 'zendesk_api'
     # Iterate to generate CSV Data
     resource.keys.each{ |key|
 
-      # Some fields have line break that not fits CSV files. 
-      # This "IF" block exclude that info setting "...". These selected field values were not needed so far. 
+      # WORKAROUND: Some fields have line break that not fits CSV files. 
+      # This "IF" block exclude that info setting "..." to the value. 
       # TODO: Replace line breaks and return all data
       if key != "long_description" && key != "raw_long_description" && key != "installation_instructions" && key != "raw_installation_instructions" 
         value = resource[key]
